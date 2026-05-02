@@ -1,0 +1,298 @@
+/* modern.css - Premium Dark Theme Overrides */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap');
+
+:root {
+  --bg-color: #0f172a;
+  --bg-surface: #1e293b;
+  --bg-surface-glass: rgba(30, 41, 59, 0.7);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent: #3b82f6;
+  --accent-glow: rgba(59, 130, 246, 0.5);
+  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  --border-color: #334155;
+  --sidebar-width: 300px;
+}
+
+body {
+  background-color: var(--bg-color) !important;
+  color: var(--text-muted) !important;
+  font-family: 'Inter', sans-serif !important;
+  letter-spacing: 0.2px;
+}
+
+h1, h2, h3, h4, h5, h6, .colorlib-heading {
+  font-family: 'Outfit', sans-serif !important;
+  color: var(--text-main) !important;
+  font-weight: 600;
+}
+
+.colorlib-heading {
+  letter-spacing: 2px;
+}
+
+/* Sidebar styling */
+#colorlib-aside {
+  background: var(--bg-surface-glass) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-right: 1px solid var(--border-color) !important;
+}
+
+#colorlib-logo a {
+  color: var(--text-main) !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#colorlib-aside .position, #colorlib-aside .position a {
+  color: var(--text-muted) !important;
+}
+
+#colorlib-main-menu ul li a {
+  color: var(--text-muted) !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 0.3s all ease;
+}
+
+#colorlib-main-menu ul li a:hover, #colorlib-main-menu ul li.active a {
+  color: var(--accent) !important;
+  transform: translateX(5px);
+}
+
+#colorlib-main-menu ul li.active a:after {
+  background: var(--accent) !important;
+}
+
+/* Hero Section */
+.slider-text-inner h1 {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 800;
+  font-size: 64px;
+  color: #fff !important;
+  line-height: 1.1;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.slider-text-inner h2 {
+  font-size: 24px;
+  color: #cbd5e1 !important;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+/* Buttons */
+.btn-primary, .btn-learn, .btn-hire, .btn-send-message {
+  background: var(--gradient-primary) !important;
+  border: none !important;
+  color: #fff !important;
+  border-radius: 30px !important;
+  padding: 12px 30px !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px var(--accent-glow) !important;
+}
+
+.btn-primary:hover, .btn-learn:hover, .btn-hire:hover, .btn-send-message:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px var(--accent-glow) !important;
+}
+
+/* Cards & Services */
+.services, .project, .blog-entry, .panel-default {
+  background: var(--bg-surface) !important;
+  border-radius: 16px !important;
+  border: 1px solid var(--border-color) !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+}
+
+.services:hover, .project:hover, .blog-entry:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4) !important;
+  border-color: var(--accent) !important;
+}
+
+.services .icon {
+  background: var(--bg-surface-glass) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--accent) !important;
+}
+
+.services h3 {
+  color: var(--text-main) !important;
+}
+
+/* Remove weird default backgrounds from color template */
+.services.color-1, .services.color-2, .services.color-3, 
+.services.color-4, .services.color-5, .services.color-6 {
+  background: var(--bg-surface) !important;
+  border-bottom: 3px solid var(--accent) !important;
+}
+
+.services.color-1 .icon, .services.color-2 .icon, .services.color-3 .icon, 
+.services.color-4 .icon, .services.color-5 .icon, .services.color-6 .icon {
+  background: var(--bg-color) !important;
+}
+
+/* Progress Bars */
+.progress {
+  background: var(--bg-color) !important;
+  border-radius: 20px !important;
+  height: 8px !important;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5) !important;
+  overflow: visible !important;
+}
+
+.progress-bar {
+  background: var(--gradient-primary) !important;
+  border-radius: 20px !important;
+  position: relative;
+}
+
+.progress-bar span {
+  position: absolute;
+  right: 0;
+  top: -28px;
+  color: var(--text-main) !important;
+  background: var(--bg-surface) !important;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.progress-bar span:after {
+  border-top-color: var(--bg-surface) !important;
+}
+
+/* Timeline/Experience */
+.timeline-centered:before {
+  background: var(--border-color) !important;
+}
+.timeline-icon {
+  background: var(--bg-surface) !important;
+  border: 2px solid var(--accent) !important;
+  color: var(--accent) !important;
+}
+.timeline-label {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 12px !important;
+}
+.timeline-label h2 a {
+  color: var(--text-main) !important;
+  font-family: 'Outfit', sans-serif !important;
+}
+.timeline-label h2 a:hover {
+  color: var(--accent) !important;
+}
+.timeline-label:after {
+  border-right-color: var(--border-color) !important;
+}
+.timeline-label:before {
+  border-right-color: var(--bg-surface) !important;
+}
+.timeline-label p {
+  color: var(--text-muted) !important;
+}
+
+/* Education Accordion */
+.panel-default > .panel-heading {
+  background: var(--bg-surface) !important;
+  border-radius: 12px !important;
+  border: none !important;
+}
+.panel-title > a {
+  color: var(--text-main) !important;
+  font-family: 'Outfit', sans-serif !important;
+}
+.panel-body {
+  background: var(--bg-surface) !important;
+  color: var(--text-muted) !important;
+  border-top: 1px solid var(--border-color) !important;
+}
+
+/* Inputs */
+.form-control {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-main) !important;
+  border-radius: 8px !important;
+}
+.form-control:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 10px var(--accent-glow) !important;
+}
+
+/* Work / Portfolio Section Overrides */
+.project {
+  padding: 0; /* Remove padding for background image cover */
+  overflow: hidden;
+  border-radius: 16px !important;
+  position: relative;
+  border: none !important;
+}
+.project .desc {
+  background: rgba(15, 23, 42, 0.85) !important; /* Darker overlay for modern look */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+.project .desc .con h3 a {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* Counters Overlay */
+#colorlib-counter .overlay {
+  background: rgba(15, 23, 42, 0.9) !important;
+}
+.colorlib-counter {
+  color: var(--accent) !important;
+  font-family: 'Outfit', sans-serif !important;
+}
+.colorlib-counter-label {
+  color: var(--text-muted) !important;
+}
+
+/* Override existing white backgrounds */
+#colorlib-main {
+  background-color: var(--bg-color) !important;
+}
+
+/* Specific elements that might be white */
+.colorlib-about, .colorlib-services, .colorlib-skills, .colorlib-education, .colorlib-experience, .colorlib-work, .colorlib-blog, .colorlib-contact {
+  background-color: var(--bg-color) !important;
+}
+
+.about-desc .heading-meta, .heading-meta {
+  color: var(--accent) !important;
+  letter-spacing: 2px !important;
+}
+
+.colorlib-feature .colorlib-icon i {
+  color: var(--accent) !important;
+}
+
+/* Footer text */
+.colorlib-footer p, .colorlib-footer ul li a i {
+  color: var(--text-muted) !important;
+}
+.colorlib-footer ul li a i:hover {
+  color: var(--accent) !important;
+}
+
+/* Slider Overlay blending for dark mode */
+#colorlib-hero .flexslider .overlay {
+  background: rgba(15, 23, 42, 0.7) !important;
+}
