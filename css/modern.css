@@ -1,4 +1,15 @@
 /* modern.css - Premium Dark Theme Overrides */
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon/icomoon.eot?6py85u');
+  src: url('../fonts/icomoon/icomoon.eot?6py85u#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon/icomoon.ttf?6py85u') format('truetype'),
+    url('../fonts/icomoon/icomoon.woff?6py85u') format('woff'),
+    url('../fonts/icomoon/icomoon.svg?6py85u#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap');
 
 :root {
@@ -14,24 +25,54 @@
   --sidebar-width: 300px;
 }
 
+@keyframes meshGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
 body {
-  background-color: var(--bg-color) !important;
+  background-color: #020617 !important;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 50% 10%, rgba(139, 92, 246, 0.05) 0%, transparent 30%),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px) !important;
+  background-size: 200% 200%, 200% 200%, 200% 200%, 50px 50px, 50px 50px !important;
+  background-attachment: fixed !important;
+  animation: meshGradient 20s ease infinite !important;
   color: var(--text-muted) !important;
   font-family: 'Inter', sans-serif !important;
   letter-spacing: 0.2px;
 }
 
-h1, h2, h3, h4, h5, h6, .colorlib-heading {
+#colorlib-main h1,
+#colorlib-main h2,
+#colorlib-main h3,
+#colorlib-main h4,
+#colorlib-main h5,
+#colorlib-main h6,
+#colorlib-main .colorlib-heading {
   font-family: 'Outfit', sans-serif !important;
   color: var(--text-main) !important;
-  font-weight: 600;
+  font-weight: 600 !important;
+  margin-top: 0 !important;
+  margin-bottom: 10px !important; /* Explicitly crushed the 4em margin from style.css */
 }
 
 .colorlib-heading {
   letter-spacing: 2px;
 }
 
-/* Sidebar styling */
 #colorlib-aside {
   background: var(--bg-surface-glass) !important;
   backdrop-filter: blur(12px);
@@ -50,7 +91,8 @@ h1, h2, h3, h4, h5, h6, .colorlib-heading {
   -webkit-text-fill-color: transparent;
 }
 
-#colorlib-aside .position, #colorlib-aside .position a {
+#colorlib-aside .position,
+#colorlib-aside .position a {
   color: var(--text-muted) !important;
 }
 
@@ -62,7 +104,8 @@ h1, h2, h3, h4, h5, h6, .colorlib-heading {
   transition: 0.3s all ease;
 }
 
-#colorlib-main-menu ul li a:hover, #colorlib-main-menu ul li.active a {
+#colorlib-main-menu ul li a:hover,
+#colorlib-main-menu ul li.active a {
   color: var(--accent) !important;
   transform: translateX(5px);
 }
@@ -71,228 +114,499 @@ h1, h2, h3, h4, h5, h6, .colorlib-heading {
   background: var(--accent) !important;
 }
 
-/* Hero Section */
 .slider-text-inner h1 {
   font-family: 'Outfit', sans-serif !important;
   font-weight: 800;
   font-size: 64px;
-  color: #fff !important;
+  color: #ffffff !important;
   line-height: 1.1;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 0, 0, 0.8);
 }
 
 .slider-text-inner h2 {
   font-size: 24px;
-  color: #cbd5e1 !important;
-  font-weight: 300;
+  color: #f8fafc !important;
+  font-weight: 400;
   margin-bottom: 40px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
-/* Buttons */
-.btn-primary, .btn-learn, .btn-hire, .btn-send-message {
+.btn-primary, .btn-learn, .btn-hire, .btn-send-message,
+a.btn-primary, a.btn-learn, a.btn-hire, a.btn-send-message,
+#colorlib-hero .flexslider .slider-text > .slider-text-inner .btn.btn-learn {
   background: var(--gradient-primary) !important;
-  border: none !important;
-  color: #fff !important;
-  border-radius: 30px !important;
-  padding: 12px 30px !important;
-  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  border-radius: 50px !important;
+  padding: 16px 40px !important;
+  font-weight: 700 !important;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease !important;
-  box-shadow: 0 4px 15px var(--accent-glow) !important;
+  letter-spacing: 2px;
+  font-size: 14px !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3), 0 0 0 0 rgba(59, 130, 246, 0) !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none !important;
+  -webkit-text-fill-color: #ffffff !important;
 }
 
 .btn-primary:hover, .btn-learn:hover, .btn-hire:hover, .btn-send-message:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px var(--accent-glow) !important;
+  transform: translateY(-5px) scale(1.05) !important;
+  box-shadow: 0 15px 30px rgba(59, 130, 246, 0.5), 0 0 20px var(--accent-glow) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  color: #ffffff !important;
 }
 
-/* Cards & Services */
-.services, .project, .blog-entry, .panel-default {
-  background: var(--bg-surface) !important;
-  border-radius: 16px !important;
-  border: 1px solid var(--border-color) !important;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+.btn-primary i, .btn-learn i {
+  font-size: 18px !important;
 }
 
-.services:hover, .project:hover, .blog-entry:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4) !important;
-  border-color: var(--accent) !important;
+.services,
+.blog-entry,
+.panel-default,
+.timeline-label {
+  background-color: rgba(30, 41, 59, 0.4) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.1) !important;
+  position: relative;
+}
+
+.project {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+  position: relative !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  min-height: 180px !important; /* Reduced from 220px */
+}
+
+.services {
+  padding: 30px 20px !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 180px !important;
+  margin-bottom: 0 !important; /* Explicitly removed the 80px margin from style.css */
 }
 
 .services .icon {
-  background: var(--bg-surface-glass) !important;
-  border: 1px solid var(--border-color) !important;
+  position: static !important;
+  margin: 0 auto 15px auto !important;
+}
+
+.services .desc {
+  margin-top: 0 !important; /* Explicitly removed the 60px margin as requested */
+  flex-grow: 1 !important;
+}
+
+.services:hover,
+.project:hover,
+.blog-entry:hover,
+.timeline-label:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-glow) !important;
+  border-color: var(--accent) !important;
+}
+
+.project .desc {
+  background: linear-gradient(to bottom, transparent 20%, rgba(2, 6, 23, 0.9)) !important;
+  opacity: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  padding: 25px !important;
+  height: 100% !important;
+  width: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  position: absolute !important;
+  transition: all 0.4s ease !important;
+  z-index: 5 !important;
+}
+
+.project .desc .con {
+  padding: 0 !important;
+  height: auto !important;
+  background: transparent !important;
+  position: relative !important;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.project .desc .con h3 a {
+  color: #ffffff !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.project .desc .con span {
   color: var(--accent) !important;
+  font-weight: 600 !important;
+  display: block !important;
+}
+
+.project:hover .desc {
+  background: rgba(2, 6, 23, 0.7) !important;
+  backdrop-filter: blur(4px);
+}
+
+[class^="icon-"],
+[class*=" icon-"],
+i {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.services .icon,
+.services .icon2,
+.project .icon {
+  background: rgba(30, 41, 59, 1) !important;
+  border: 1px solid var(--accent) !important;
+  color: var(--accent) !important;
+  box-shadow: 0 0 15px var(--accent-glow) !important;
+  width: 60px !important;
+  height: 60px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 12px !important;
+  margin: 0 auto 20px auto !important;
+  position: relative !important;
+}
+
+.services .icon i,
+.services .icon2 i,
+.project .icon i,
+[class^="icon-"],
+[class*=" icon-"] {
+  color: var(--accent) !important;
+  font-size: 32px !important;
+  display: inline-block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .services h3 {
   color: var(--text-main) !important;
+  font-weight: 700 !important;
+  margin-top: 10px !important;
+  text-align: center;
 }
 
-/* Remove weird default backgrounds from color template */
-.services.color-1, .services.color-2, .services.color-3, 
-.services.color-4, .services.color-5, .services.color-6 {
-  background: var(--bg-surface) !important;
-  border-bottom: 3px solid var(--accent) !important;
-}
-
-.services.color-1 .icon, .services.color-2 .icon, .services.color-3 .icon, 
-.services.color-4 .icon, .services.color-5 .icon, .services.color-6 .icon {
-  background: var(--bg-color) !important;
-}
-
-/* Progress Bars */
-.progress {
-  background: var(--bg-color) !important;
-  border-radius: 20px !important;
-  height: 8px !important;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5) !important;
-  overflow: visible !important;
-}
-
-.progress-bar {
-  background: var(--gradient-primary) !important;
-  border-radius: 20px !important;
-  position: relative;
-}
-
-.progress-bar span {
-  position: absolute;
-  right: 0;
-  top: -28px;
-  color: var(--text-main) !important;
-  background: var(--bg-surface) !important;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.progress-bar span:after {
-  border-top-color: var(--bg-surface) !important;
-}
-
-/* Timeline/Experience */
-.timeline-centered:before {
-  background: var(--border-color) !important;
-}
 .timeline-icon {
   background: var(--bg-surface) !important;
   border: 2px solid var(--accent) !important;
   color: var(--accent) !important;
 }
-.timeline-label {
-  background: var(--bg-surface) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 12px !important;
-}
+
 .timeline-label h2 a {
   color: var(--text-main) !important;
-  font-family: 'Outfit', sans-serif !important;
-}
-.timeline-label h2 a:hover {
-  color: var(--accent) !important;
-}
-.timeline-label:after {
-  border-right-color: var(--border-color) !important;
-}
-.timeline-label:before {
-  border-right-color: var(--bg-surface) !important;
-}
-.timeline-label p {
-  color: var(--text-muted) !important;
 }
 
-/* Education Accordion */
-.panel-default > .panel-heading {
+.panel-default>.panel-heading {
   background: var(--bg-surface) !important;
   border-radius: 12px !important;
-  border: none !important;
-}
-.panel-title > a {
-  color: var(--text-main) !important;
-  font-family: 'Outfit', sans-serif !important;
-}
-.panel-body {
-  background: var(--bg-surface) !important;
-  color: var(--text-muted) !important;
-  border-top: 1px solid var(--border-color) !important;
-}
-
-/* Inputs */
-.form-control {
-  background: var(--bg-surface) !important;
   border: 1px solid var(--border-color) !important;
+}
+
+.panel-title>a {
   color: var(--text-main) !important;
-  border-radius: 8px !important;
-}
-.form-control:focus {
-  border-color: var(--accent) !important;
-  box-shadow: 0 0 10px var(--accent-glow) !important;
+  background: var(--bg-surface) !important;
+  display: block;
+  padding: 15px 20px !important;
 }
 
-/* Work / Portfolio Section Overrides */
-.project {
-  padding: 0; /* Remove padding for background image cover */
-  overflow: hidden;
-  border-radius: 16px !important;
-  position: relative;
-  border: none !important;
-}
-.project .desc {
-  background: rgba(15, 23, 42, 0.85) !important; /* Darker overlay for modern look */
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
-}
-.project .desc .con h3 a {
-  color: #fff !important;
-  font-weight: 600;
-}
-
-/* Counters Overlay */
-#colorlib-counter .overlay {
-  background: rgba(15, 23, 42, 0.9) !important;
-}
-.colorlib-counter {
-  color: var(--accent) !important;
-  font-family: 'Outfit', sans-serif !important;
-}
-.colorlib-counter-label {
-  color: var(--text-muted) !important;
-}
-
-/* Override existing white backgrounds */
 #colorlib-main {
   background-color: var(--bg-color) !important;
 }
 
-/* Specific elements that might be white */
-.colorlib-about, .colorlib-services, .colorlib-skills, .colorlib-education, .colorlib-experience, .colorlib-work, .colorlib-blog, .colorlib-contact {
-  background-color: var(--bg-color) !important;
+.colorlib-about,
+.colorlib-services,
+.colorlib-skills,
+.colorlib-education,
+.colorlib-experience,
+.colorlib-work,
+.colorlib-blog,
+.colorlib-contact {
+  background-color: transparent !important;
 }
 
-.about-desc .heading-meta, .heading-meta {
+.container-wrap {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Global Gap Reduction */
+section,
+.colorlib-about,
+.colorlib-services,
+.colorlib-skills,
+.colorlib-education,
+.colorlib-experience,
+.colorlib-work,
+.colorlib-blog,
+.colorlib-contact {
+  padding-top: 2.5em !important;
+  padding-bottom: 2.5em !important;
+}
+
+.row-pb-md {
+  padding-bottom: 1.5em !important;
+}
+
+.row-pb-sm {
+  padding-bottom: 0.5em !important;
+}
+
+.row-pt-md {
+  padding-top: 1.5em !important;
+}
+
+.colorlib-narrow-content {
+  padding: 0 40px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .colorlib-narrow-content {
+    padding: 0 20px !important;
+  }
+}
+
+.colorlib-work {
+  padding-top: 0.5em !important;
+  padding-bottom: 0.5em !important;
+}
+
+.colorlib-work .row {
+  margin-bottom: 5px !important;
+}
+
+.colorlib-work .colorlib-heading {
+  margin-bottom: 2px !important;
+}
+
+.colorlib-work .heading-meta {
+  margin-bottom: 0 !important;
+}
+
+.work-menu {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-top: 5px !important;
+  margin-bottom: 10px !important;
+  justify-content: flex-start !important;
+}
+
+.project {
+  margin-bottom: 10px !important;
+}
+
+.project .desc {
+  background: linear-gradient(to bottom, transparent 20%, rgba(2, 6, 23, 0.9)) !important;
+  opacity: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  padding: 15px !important; /* Reduced from 25px */
+  height: 100% !important;
+  width: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  position: absolute !important;
+  transition: all 0.4s ease !important;
+  z-index: 5 !important;
+}
+
+#colorlib-hero {
+  margin-bottom: 1em !important;
+}
+
+.progress-wrap {
+  margin-bottom: 1.5em !important;
+}
+
+.timeline-entry {
+  margin-bottom: 1em !important;
+}
+
+/* Remove side margins that create artificial gaps */
+.col-md-offset-1 {
+  margin-left: 0 !important;
+}
+
+.col-md-11 {
+  width: 100% !important;
+}
+
+/* Equal Height Row Fix - Ensures all boxes in a row match height */
+.colorlib-services .row,
+.colorlib-work .row,
+.colorlib-blog .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 20px !important; /* Space between rows */
+  height: auto !important; /* Allow row to grow */
+}
+
+.colorlib-services .row::before,
+.colorlib-services .row::after,
+.colorlib-work .row::before,
+.colorlib-work .row::after,
+.colorlib-blog .row::before,
+.colorlib-blog .row::after {
+  display: none !important;
+}
+
+.colorlib-services .row>[class*="col-"],
+.colorlib-work .row>[class*="col-"],
+.colorlib-blog .row>[class*="col-"] {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-bottom: 30px !important; /* Space between cards in wrap mode */
+}
+
+.colorlib-services .animate-box,
+.colorlib-work .animate-box,
+.colorlib-blog .animate-box {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+}
+
+.services,
+.project,
+.blog-entry {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.services .desc {
+  flex-grow: 1 !important;
+}
+
+/* Contact Info Grid - Center and Align items */
+.contact-info-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important; /* Forced into one row */
+  gap: 20px !important;
+  width: 100% !important;
+  margin-top: 20px !important;
+}
+
+.contact-info-grid .colorlib-feature {
+  margin-bottom: 0 !important;
+  padding: 20px !important;
+  background: rgba(30, 41, 59, 0.4) !important;
+  border-radius: 15px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  display: flex !important;
+  align-items: center !important;
+  transition: all 0.3s ease !important;
+}
+
+.contact-info-grid .colorlib-feature:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent) !important;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
+}
+
+.contact-info-grid .colorlib-icon {
+  position: static !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: transparent !important;
+  margin-right: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.contact-info-grid .colorlib-icon i {
+  font-size: 24px !important;
   color: var(--accent) !important;
-  letter-spacing: 2px !important;
 }
 
-.colorlib-feature .colorlib-icon i {
-  color: var(--accent) !important;
+.contact-info-grid .colorlib-text {
+  padding-left: 0 !important;
 }
 
-/* Footer text */
-.colorlib-footer p, .colorlib-footer ul li a i {
+.contact-info-grid .colorlib-text p {
+  margin: 0 !important;
+  font-size: 16px !important;
+}
+
+/* Professional Work Filter Tabs */
+.work-menu {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  margin-top: 10px !important;
+  margin-bottom: 20px !important;
+  justify-content: flex-start !important;
+}
+
+.colorlib-work .colorlib-heading {
+  margin-bottom: 10px !important;
+}
+
+.colorlib-work .heading-meta {
+  margin-bottom: 0 !important;
+}
+
+.work-menu span {
+  margin: 0 !important;
+}
+
+.work-menu span a {
+  display: inline-block !important;
+  padding: 10px 25px !important;
+  background: rgba(30, 41, 59, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 30px !important;
   color: var(--text-muted) !important;
-}
-.colorlib-footer ul li a i:hover {
-  color: var(--accent) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  text-decoration: none !important;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  backdrop-filter: blur(5px);
 }
 
-/* Slider Overlay blending for dark mode */
-#colorlib-hero .flexslider .overlay {
-  background: rgba(15, 23, 42, 0.7) !important;
+.work-menu span a:hover {
+  background: rgba(59, 130, 246, 0.1) !important;
+  color: var(--accent) !important;
+  transform: translateY(-2px);
+  border-color: var(--accent) !important;
+}
+
+.work-menu span a.active {
+  background: var(--gradient-primary) !important;
+  color: #ffffff !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 8px 20px var(--accent-glow) !important;
 }
