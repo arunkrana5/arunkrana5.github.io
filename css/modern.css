@@ -444,7 +444,59 @@ section,
 
 #colorlib-hero {
   margin-bottom: 1em !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
+
+/* Mobile responsive fixes for the hero section */
+@media screen and (max-width: 768px) {
+  #colorlib-hero {
+    height: 100vh !important;
+    min-height: 100vh !important;
+  }
+  
+  #colorlib-hero .flexslider {
+    height: 100vh !important;
+  }
+
+  #colorlib-hero .flexslider .slides {
+    height: 100vh !important;
+  }
+
+  #colorlib-hero .flexslider .slides li {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    background-position: center center !important;
+  }
+
+  #colorlib-hero .slider-text {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  #colorlib-hero .slider-text-inner {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 1.5em !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .slider-text-inner h1 {
+    font-size: 36px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .slider-text-inner h2 {
+    font-size: 18px !important;
+    margin-bottom: 25px !important;
+  }
+}
+
 
 .progress-wrap {
   margin-bottom: 1.5em !important;
