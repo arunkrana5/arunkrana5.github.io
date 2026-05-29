@@ -444,6 +444,7 @@ section,
 
 #colorlib-hero {
   margin-bottom: 1em !important;
+  margin-top: -39px !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
@@ -451,6 +452,7 @@ section,
 /* Mobile responsive fixes for the hero section */
 @media screen and (max-width: 768px) {
   #colorlib-hero {
+    margin-top: -39px !important;
     height: 100vh !important;
     min-height: 100vh !important;
   }
