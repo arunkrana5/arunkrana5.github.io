@@ -1,23 +1,25 @@
 /* ==========================================================================
-   ARUN KUMAR RANA - MODERN .NET FULL STACK DEVELOPER PORTFOLIO
-   Design System: Compact, Enterprise SaaS, Information-Dense UI
+   ARUN KUMAR RANA - SENIOR .NET FULL STACK DEVELOPER PORTFOLIO
+   Design System: Enterprise SaaS Dashboard, Code IDE Aesthetic, Compact UI
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. CSS VARIABLES & THEME DEFINITIONS
    -------------------------------------------------------------------------- */
 :root {
-  /* Dark Mode (Default) - High Contrast Enterprise Palette */
-  --bg-main: #090d16;
+  /* Dark Obsidian Theme (Default) - Senior Enterprise Palette */
+  --bg-main: #0b0f19;
   --bg-card: #111827;
-  --bg-card-hover: #1f293d;
-  --bg-glass: rgba(17, 24, 39, 0.85);
-  --bg-subtle: #1a2234;
+  --bg-card-hover: #1e293d;
+  --bg-glass: rgba(17, 24, 39, 0.9);
+  --bg-subtle: #172033;
+  --bg-code: #070a12;
   --bg-badge: rgba(59, 130, 246, 0.12);
   
   --border-color: #1e293b;
   --border-light: #334155;
   --border-hover: #3b82f6;
+  --border-code: #2d3748;
   
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
@@ -26,16 +28,17 @@
   
   --accent-primary: #3b82f6;
   --accent-hover: #2563eb;
-  --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+  --accent-gradient: linear-gradient(135deg, #2563eb 0%, #6366f1 100%);
   --accent-glow: rgba(59, 130, 246, 0.25);
   --accent-emerald: #10b981;
   --accent-amber: #f59e0b;
   --accent-purple: #8b5cf6;
+  --accent-rose: #f43f5e;
   
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.2);
+  --shadow-glow: 0 0 25px rgba(59, 130, 246, 0.2);
 
   --radius-sm: 6px;
   --radius-md: 10px;
@@ -52,13 +55,15 @@
   --bg-main: #f8fafc;
   --bg-card: #ffffff;
   --bg-card-hover: #f1f5f9;
-  --bg-glass: rgba(255, 255, 255, 0.9);
+  --bg-glass: rgba(255, 255, 255, 0.95);
   --bg-subtle: #f1f5f9;
+  --bg-code: #0f172a;
   --bg-badge: rgba(59, 130, 246, 0.1);
   
   --border-color: #e2e8f0;
   --border-light: #cbd5e1;
   --border-hover: #3b82f6;
+  --border-code: #334155;
   
   --text-primary: #0f172a;
   --text-secondary: #475569;
@@ -100,7 +105,7 @@ body {
 /* Container */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -113,9 +118,9 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
-h2 { font-size: clamp(1.35rem, 3vw, 1.75rem); }
-h3 { font-size: clamp(1.1rem, 2vw, 1.25rem); }
+h1 { font-size: clamp(1.85rem, 4vw, 2.75rem); }
+h2 { font-size: clamp(1.35rem, 3vw, 1.85rem); }
+h3 { font-size: clamp(1.05rem, 2vw, 1.25rem); }
 
 p {
   font-size: 0.9375rem;
@@ -139,7 +144,7 @@ a:hover {
 
 /* Compact Section Formatting */
 .section {
-  padding: 40px 0;
+  padding: 44px 0;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -176,7 +181,7 @@ a:hover {
 .section-subtitle {
   font-size: 0.9375rem;
   color: var(--text-muted);
-  max-width: 680px;
+  max-width: 720px;
 }
 
 /* Badges & Chips */
@@ -186,7 +191,7 @@ a:hover {
   gap: 4px;
   padding: 3px 10px;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: var(--radius-full);
   background: var(--bg-badge);
   color: var(--text-accent);
@@ -202,8 +207,14 @@ a:hover {
 
 .badge-purple {
   background: rgba(139, 92, 246, 0.12);
-  color: #a78bfa;
+  color: #c084fc;
   border-color: rgba(139, 92, 246, 0.3);
+}
+
+.badge-amber {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+  border-color: rgba(245, 158, 11, 0.3);
 }
 
 /* Buttons */
@@ -212,7 +223,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 8px 18px;
+  padding: 9px 20px;
   font-size: 0.875rem;
   font-weight: 600;
   border-radius: var(--radius-md);
@@ -224,19 +235,19 @@ a:hover {
 }
 
 .btn-sm {
-  padding: 6px 12px;
+  padding: 6px 14px;
   font-size: 0.8125rem;
 }
 
 .btn-primary {
   background: var(--accent-gradient);
   color: #ffffff !important;
-  box-shadow: 0 2px 8px var(--accent-glow);
+  box-shadow: 0 2px 10px var(--accent-glow);
 }
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4);
   color: #ffffff !important;
 }
 
@@ -278,8 +289,8 @@ a:hover {
   right: 0;
   height: var(--nav-height);
   background: var(--bg-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-color);
   z-index: 1000;
   transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -300,8 +311,8 @@ a:hover {
 }
 
 .brand-avatar {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--accent-primary);
@@ -392,7 +403,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   4. HERO SECTION (COMPACT & HIGH IMPACT)
+   4. HERO SECTION (SENIOR LEAD COMPACT HERO)
    -------------------------------------------------------------------------- */
 .hero-section {
   padding-top: calc(var(--nav-height) + 32px);
@@ -436,7 +447,7 @@ a:hover {
 }
 
 .hero-name {
-  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-size: clamp(2.1rem, 3.5vw, 2.85rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--text-primary);
@@ -444,7 +455,7 @@ a:hover {
 }
 
 .hero-headline {
-  font-size: 1.125rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: var(--text-primary);
   line-height: 1.4;
@@ -454,7 +465,7 @@ a:hover {
   font-size: 0.9375rem;
   color: var(--text-secondary);
   line-height: 1.6;
-  max-width: 640px;
+  max-width: 660px;
 }
 
 .hero-actions {
@@ -552,15 +563,15 @@ a:hover {
 }
 
 .stat-icon {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: var(--radius-md);
   background: var(--bg-badge);
   color: var(--accent-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.125rem;
+  font-size: 1.15rem;
   flex-shrink: 0;
 }
 
@@ -579,7 +590,85 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   6. ABOUT / PROFESSIONAL SUMMARY (COMPACT & ENGAGING)
+   6. LIVE C# .NET 8 CODE ARCHITECTURE SHOWCASE
+   -------------------------------------------------------------------------- */
+.code-viewer-card {
+  background: var(--bg-code);
+  border: 1px solid var(--border-code);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.code-viewer-header {
+  padding: 12px 18px;
+  background: rgba(17, 24, 39, 0.95);
+  border-bottom: 1px solid var(--border-code);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.code-tabs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.code-tab-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.code-tab-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.code-tab-btn.active {
+  color: var(--text-accent);
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.code-viewer-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.code-filename {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: #34d399;
+}
+
+.code-block-wrapper {
+  padding: 16px 20px;
+  overflow-x: auto;
+  max-height: 480px;
+}
+
+.code-block-wrapper pre {
+  font-family: var(--font-mono);
+  font-size: 0.84375rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+  white-space: pre;
+}
+
+/* --------------------------------------------------------------------------
+   7. ABOUT / PROFESSIONAL SUMMARY
    -------------------------------------------------------------------------- */
 .about-grid {
   display: grid;
@@ -591,7 +680,7 @@ a:hover {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 20px;
+  padding: 22px;
 }
 
 .about-text {
@@ -619,9 +708,10 @@ a:hover {
 }
 
 .highlight-icon {
-  color: var(--accent-primary);
+  color: var(--accent-emerald);
   margin-top: 2px;
   flex-shrink: 0;
+  font-weight: 700;
 }
 
 .education-compact-list {
@@ -650,7 +740,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   7. WORK EXPERIENCE (COMPACT TIMELINE)
+   8. WORK EXPERIENCE (SENIOR TIMELINE)
    -------------------------------------------------------------------------- */
 .experience-timeline {
   display: flex;
@@ -662,7 +752,7 @@ a:hover {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 20px;
+  padding: 22px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -678,7 +768,6 @@ a:hover {
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 12px;
-
 }
 
 .exp-role-title {
@@ -698,7 +787,7 @@ a:hover {
   font-size: 0.78125rem;
   color: var(--text-muted);
   background: var(--bg-subtle);
-  padding: 2px 8px;
+  padding: 2px 10px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-color);
 }
@@ -734,7 +823,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   8. FEATURED PROJECTS GRID (COMPACT CARDS & MODAL)
+   9. FEATURED PROJECTS GRID (SENIOR CARDS & METRIC BANNERS)
    -------------------------------------------------------------------------- */
 .projects-grid {
   display: grid;
@@ -759,7 +848,7 @@ a:hover {
 }
 
 .project-thumb-container {
-  height: 140px;
+  height: 145px;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -785,10 +874,25 @@ a:hover {
   font-weight: 600;
   padding: 2px 8px;
   border-radius: var(--radius-sm);
-  background: rgba(9, 13, 22, 0.85);
+  background: rgba(11, 15, 25, 0.88);
   color: var(--text-primary);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.project-metric-banner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(15, 23, 42, 0.92);
+  color: #34d399;
+  font-family: var(--font-mono);
+  font-size: 0.71875rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
 }
 
 .project-body {
@@ -803,7 +907,6 @@ a:hover {
   font-size: 1rem;
   font-weight: 700;
   color: var(--text-primary);
-
 }
 
 .project-desc {
@@ -839,8 +942,8 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
   z-index: 2000;
   display: flex;
   align-items: center;
@@ -861,7 +964,7 @@ a:hover {
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   width: 100%;
-  max-width: 760px;
+  max-width: 800px;
   max-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -908,6 +1011,15 @@ a:hover {
   background: var(--bg-card-hover);
 }
 
+.modal-metrics-bar {
+  padding: 8px 20px;
+  background: rgba(16, 185, 129, 0.1);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  font-size: 0.8125rem;
+  font-family: var(--font-mono);
+}
+
 .modal-body {
   padding: 20px;
   overflow-y: auto;
@@ -948,7 +1060,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   9. SKILLS MATRIX (CATEGORIZED BADGES)
+   10. SKILLS MATRIX (SENIOR CATEGORIZED CHIPS)
    -------------------------------------------------------------------------- */
 .skills-grid {
   display: grid;
@@ -1004,7 +1116,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   10. ARCHITECTURE & SDLC SECTION
+   11. ARCHITECTURE & SDLC SECTION
    -------------------------------------------------------------------------- */
 .arch-card {
   background: var(--bg-card);
@@ -1036,8 +1148,8 @@ a:hover {
 }
 
 .arch-step-icon {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-md);
   background: var(--bg-card);
   border: 1px solid var(--border-light);
@@ -1045,7 +1157,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.125rem;
+  font-size: 1.15rem;
 }
 
 .arch-step-label {
@@ -1093,7 +1205,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   11. ENGINEERING PROBLEMS I'VE SOLVED
+   12. ENGINEERING PROBLEMS I'VE SOLVED
    -------------------------------------------------------------------------- */
 .problems-grid {
   display: grid;
@@ -1111,15 +1223,15 @@ a:hover {
 }
 
 .problem-icon-wrapper {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-md);
   background: var(--bg-badge);
   color: var(--accent-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.125rem;
+  font-size: 1.15rem;
   flex-shrink: 0;
 }
 
@@ -1142,7 +1254,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   12. TECHNICAL SDLC JOURNEY
+   13. TECHNICAL SDLC JOURNEY
    -------------------------------------------------------------------------- */
 .sdlc-flow {
   display: flex;
@@ -1176,7 +1288,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   13. CONTACT SECTION
+   14. CONTACT SECTION
    -------------------------------------------------------------------------- */
 .contact-grid {
   display: grid;
@@ -1295,7 +1407,7 @@ textarea.form-control {
 }
 
 /* --------------------------------------------------------------------------
-   14. FOOTER & BACK TO TOP
+   15. FOOTER & BACK TO TOP
    -------------------------------------------------------------------------- */
 .footer {
   padding: 24px 0;
