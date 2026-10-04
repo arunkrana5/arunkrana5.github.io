@@ -1,7 +1,7 @@
 /**
  * ARUN  KUMAR RANA - LIVE C# .NET 8 CODE ARCHITECTURE VIEWER
  * Demonstrates Senior .NET Developer C# code quality, CQRS/MediatR, Dapper, Resilience, and SQL optimization.
- */
+ */ 
 
 const CODE_SNIPPETS = {
   cqrs: {
