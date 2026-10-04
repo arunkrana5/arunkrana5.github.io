@@ -1,25 +1,25 @@
 /* ==========================================================================
-   ARUN KUMAR RANA - SENIOR .NET FULL STACK DEVELOPER PORTFOLIO
-   Responsive Stylesheet: Optimized for Mobile (320px-480px), Tablet (768px), Laptop (1024px), Desktop (1440px)
+   ARUN KUMAR RANA - MOBILE-FIRST RESPONSIVE DESIGN SYSTEM
+   Tested for: 320px, 360px, 375px, 390px, 414px, 480px, 768px, 1024px, 1440px
    ========================================================================== */
 
-/* Large Screens (1440px +) */
+/* Large Displays (1440px +) */
 @media screen and (min-width: 1440px) {
   .container {
-    max-width: 1280px;
+    max-width: 1240px;
   }
 }
 
-/* Laptops & Standard Desktops (1024px - 1279px) */
+/* Standard Laptops (1024px - 1439px) */
 @media screen and (max-width: 1279px) {
   .hero-grid {
-    grid-template-columns: 1fr 240px;
+    grid-template-columns: 1fr 220px;
     gap: 24px;
   }
 
   .profile-avatar-card {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
   }
 
   .arch-pillars-grid {
@@ -27,7 +27,7 @@
   }
 }
 
-/* Tablets & Small Laptops (768px - 1023px) */
+/* Tablets (768px - 1023px) */
 @media screen and (max-width: 1023px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -54,12 +54,12 @@
 
   .hero-avatar-wrapper {
     order: -1;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
 
   .profile-avatar-card {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
   }
 
   .stats-grid {
@@ -84,62 +84,70 @@
 }
 
 /* ==========================================================================
-   MOBILE PHONES (Under 768px - 320px)
+   MOBILE SMARTPHONES (320px - 767px) - ULTRA-CLEAN APP EXPERIENCE
    ========================================================================== */
 @media screen and (max-width: 767px) {
   :root {
-    --nav-height: 58px;
+    --nav-height: 54px;
   }
 
   .section {
-    padding: 28px 0;
+    padding: 24px 0;
   }
 
   .container {
-    padding: 0 16px;
+    padding: 0 14px;
   }
 
-  /* 1. Header & Navigation Mobile Fixes */
+  /* 1. Header Navigation Bar Mobile */
   .navbar-brand {
     gap: 8px;
   }
 
   .brand-avatar {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
   }
 
   .brand-name {
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
+    font-weight: 700;
   }
 
-  /* Hide long brand title on mobile header to prevent clutter */
+  /* Hide multiline brand title on mobile to prevent navbar overflow */
   .brand-title {
     display: none;
   }
 
   .nav-actions {
-    gap: 6px;
+    gap: 4px;
   }
 
   .nav-actions .btn {
-    padding: 5px 10px;
-    font-size: 0.78125rem;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
+  .theme-toggle {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
   }
 
   .mobile-menu-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     background: var(--bg-subtle);
     border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-sm);
     color: var(--text-primary);
+    font-size: 1rem;
   }
 
-  /* Slide-down Navigation Drawer */
+  /* Mobile Drawer Menu */
   .nav-menu {
     position: fixed;
     top: var(--nav-height);
@@ -148,8 +156,8 @@
     background: var(--bg-card);
     border-bottom: 1px solid var(--border-color);
     flex-direction: column;
-    padding: 12px 16px;
-    gap: 4px;
+    padding: 10px 14px;
+    gap: 2px;
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
@@ -165,140 +173,143 @@
 
   .nav-link {
     width: 100%;
-    padding: 10px 14px;
-    font-size: 0.9375rem;
-    border-radius: var(--radius-sm);
+    padding: 8px 12px;
+    font-size: 0.875rem;
   }
 
-  .nav-link.active::after {
-    display: none;
-  }
-
-  /* 2. Hero Section Mobile Optimization */
+  /* 2. Compact Native Hero Mobile */
   .hero-section {
-    padding-top: calc(var(--nav-height) + 16px);
-    padding-bottom: 24px;
+    padding-top: calc(var(--nav-height) + 12px);
+    padding-bottom: 20px;
   }
 
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
     text-align: center;
   }
 
   .hero-avatar-wrapper {
     order: -1;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
 
   .profile-avatar-card {
-    width: 120px;
-    height: 120px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
-    padding: 4px;
+    padding: 3px;
   }
 
   .profile-avatar-img {
     border-radius: 50%;
   }
 
+  .experience-chip {
+    font-size: 0.71875rem;
+    padding: 3px 10px;
+  }
+
   .hero-role-badge {
     margin: 0 auto;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
   }
 
   .eyebrow {
-    font-size: 0.71875rem;
-    letter-spacing: 0.05em;
+    font-size: 0.6875rem;
+    letter-spacing: 0.04em;
   }
 
   .hero-name {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     line-height: 1.15;
   }
 
   .hero-headline {
-    font-size: 0.9375rem;
-    line-height: 1.45;
+    font-size: 0.875rem;
+    line-height: 1.4;
   }
 
   .hero-description {
-    font-size: 0.84375rem;
-    line-height: 1.55;
+    font-size: 0.8125rem;
+    line-height: 1.5;
   }
 
   .hero-actions {
     flex-direction: column;
     width: 100%;
-    gap: 8px;
+    gap: 6px;
   }
 
   .hero-actions .btn {
     width: 100%;
-    padding: 10px 16px;
-    font-size: 0.875rem;
+    padding: 9px 14px;
+    font-size: 0.8125rem;
   }
 
   .hero-socials {
     width: 100%;
     justify-content: center;
-    margin-top: 4px;
+    margin-top: 2px;
     border-left: none;
     padding-left: 0;
+    margin-left: 0;
   }
 
-  /* 3. Stats Grid Mobile Optimization */
+  /* 3. Stats Grid Mobile */
   .stats-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    gap: 6px;
   }
 
   .stat-card {
-    padding: 10px 12px;
+    padding: 8px 10px;
     gap: 8px;
-    align-items: center;
   }
 
   .stat-icon {
-    width: 34px;
-    height: 34px;
-    font-size: 0.95rem;
+    width: 30px;
+    height: 30px;
+    font-size: 0.875rem;
     border-radius: var(--radius-sm);
   }
 
   .stat-val {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .stat-lbl {
-    font-size: 0.71875rem;
-    line-height: 1.25;
+    font-size: 0.6875rem;
+    line-height: 1.2;
   }
 
-  /* 4. Live Code Architecture Viewer Mobile */
+  /* 4. Code Architecture Viewer Mobile */
   .code-viewer-card {
     border-radius: var(--radius-md);
   }
 
   .code-viewer-header {
-    padding: 10px 12px;
+    padding: 8px 10px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: 6px;
   }
 
   .code-tabs {
     width: 100%;
     overflow-x: auto;
     white-space: nowrap;
-    padding-bottom: 4px;
+    padding-bottom: 2px;
     -webkit-overflow-scrolling: touch;
+    display: flex;
+    gap: 4px;
   }
 
   .code-tab-btn {
-    padding: 4px 10px;
-    font-size: 0.75rem;
+    padding: 3px 8px;
+    font-size: 0.71875rem;
+    flex-shrink: 0;
   }
 
   .code-viewer-meta {
@@ -307,227 +318,270 @@
   }
 
   .code-filename {
-    font-size: 0.75rem;
+    font-size: 0.71875rem;
   }
 
   .code-block-wrapper {
-    padding: 12px 14px;
-    max-height: 360px;
+    padding: 10px 12px;
+    max-height: 280px;
   }
 
   .code-block-wrapper pre {
-    font-size: 0.75rem;
-    line-height: 1.5;
+    font-size: 0.71875rem;
+    line-height: 1.45;
   }
 
   /* 5. About & Education Mobile */
   .about-card {
-    padding: 16px;
+    padding: 14px;
   }
 
   .about-text {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
+    line-height: 1.5;
   }
 
   .about-highlights {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 6px;
   }
 
   .education-compact-list {
-    gap: 8px;
+    gap: 6px;
   }
 
   .edu-item {
-    padding: 10px;
+    padding: 8px 10px;
   }
 
   .edu-title {
-    font-size: 0.84375rem;
+    font-size: 0.8125rem;
   }
 
   .edu-desc {
-    font-size: 0.75rem;
+    font-size: 0.71875rem;
   }
 
   /* 6. Experience Timeline Mobile */
   .exp-card {
-    padding: 16px;
+    padding: 14px;
   }
 
   .exp-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
+    gap: 2px;
   }
 
   .exp-role-title {
-    font-size: 0.95rem;
+    font-size: 0.875rem;
   }
 
   .exp-company {
-    font-size: 0.8125rem;
+    font-size: 0.78125rem;
   }
 
   .exp-date {
-    font-size: 0.71875rem;
-    margin-top: 2px;
+    font-size: 0.6875rem;
+    padding: 1px 6px;
   }
 
   .exp-bullet-list li {
-    font-size: 0.8125rem;
-    line-height: 1.45;
+    font-size: 0.78125rem;
+    line-height: 1.4;
   }
 
   /* 7. Projects Grid & Case Study Modal Mobile */
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
+  }
+
+  .project-card {
+    border-radius: var(--radius-md);
   }
 
   .project-thumb-container {
-    height: 160px;
+    height: 130px;
+  }
+
+  .project-category-badge {
+    font-size: 0.6875rem;
+    padding: 2px 6px;
+  }
+
+  .project-metric-banner {
+    font-size: 0.6875rem;
+    padding: 3px 8px;
   }
 
   .project-body {
-    padding: 14px;
-    gap: 8px;
+    padding: 12px;
+    gap: 6px;
   }
 
   .project-name {
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
   }
 
   .project-desc {
-    font-size: 0.8125rem;
+    font-size: 0.78125rem;
   }
 
   /* Case Study Modal Mobile */
+  .modal-overlay {
+    padding: 10px;
+  }
+
   .modal-container {
-    max-height: 95vh;
+    max-height: 92vh;
     border-radius: var(--radius-md);
   }
 
   .modal-header {
-    padding: 12px 14px;
+    padding: 10px 12px;
   }
 
   .modal-title {
-    font-size: 1rem;
+    font-size: 0.9375rem;
   }
 
   .modal-metrics-bar {
-    padding: 6px 14px;
-    font-size: 0.75rem;
+    padding: 5px 12px;
+    font-size: 0.71875rem;
   }
 
   .modal-body {
-    padding: 14px;
-    gap: 12px;
+    padding: 12px;
+    gap: 10px;
   }
 
   .modal-tabs {
     overflow-x: auto;
     white-space: nowrap;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
     -webkit-overflow-scrolling: touch;
+    display: flex;
+    gap: 4px;
   }
 
   .modal-tab-btn {
-    padding: 5px 10px;
-    font-size: 0.78125rem;
+    padding: 4px 8px;
+    font-size: 0.71875rem;
+    flex-shrink: 0;
   }
 
   /* 8. Skills Grid Mobile */
   .skills-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
 
   .skill-category-card {
-    padding: 14px;
+    padding: 12px;
   }
 
   .skill-cat-title {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
   }
 
   .skill-chip {
-    font-size: 0.78125rem;
-    padding: 3px 8px;
+    font-size: 0.71875rem;
+    padding: 2px 6px;
   }
 
-  /* 9. System Architecture & Diagram Mobile Pipeline */
+  /* 9. System Architecture Diagram Mobile Vertical Pipeline */
   .arch-card {
-    padding: 14px;
+    padding: 12px;
   }
 
   .arch-flow-diagram {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    padding: 14px;
+    gap: 8px;
+    padding: 12px;
     border-left: 3px solid var(--accent-primary);
   }
 
   .arch-step {
     flex-direction: row;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     min-width: unset;
     text-align: left;
     width: 100%;
   }
 
   .arch-step-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 0.95rem;
+    width: 32px;
+    height: 32px;
+    font-size: 0.875rem;
     flex-shrink: 0;
   }
 
+  .arch-step-label {
+    font-size: 0.78125rem;
+  }
+
+  .arch-step-sub {
+    font-size: 0.6875rem;
+  }
+
   .arch-arrow {
-    align-self: center;
-    font-size: 0.95rem;
+    align-self: flex-start;
+    margin-left: 10px;
+    font-size: 0.8125rem;
     transform: rotate(90deg);
   }
 
   .arch-pillars-grid {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 6px;
+  }
+
+  .pillar-card {
+    padding: 8px 10px;
+  }
+
+  .pillar-title {
+    font-size: 0.78125rem;
+  }
+
+  .pillar-desc {
+    font-size: 0.71875rem;
   }
 
   /* 10. Problems Solved Mobile */
   .problems-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .problem-card {
-    padding: 14px;
     gap: 10px;
   }
 
-  .problem-icon-wrapper {
-    width: 34px;
-    height: 34px;
-    font-size: 0.95rem;
+  .problem-card {
+    padding: 12px;
+    gap: 8px;
   }
 
-  .problem-title {
+  .problem-icon-wrapper {
+    width: 32px;
+    height: 32px;
     font-size: 0.875rem;
   }
 
-  .problem-desc {
+  .problem-title {
     font-size: 0.8125rem;
+  }
+
+  .problem-desc {
+    font-size: 0.75rem;
   }
 
   /* SDLC Mobile */
   .sdlc-flow {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
-    padding: 14px;
+    gap: 6px;
+    padding: 12px;
   }
 
   .sdlc-sep {
@@ -536,47 +590,63 @@
 
   .sdlc-node {
     width: 100%;
-    font-size: 0.78125rem;
+    font-size: 0.75rem;
   }
 
   /* 11. Contact Form & Footer Mobile */
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
 
   .contact-info-card, .contact-form-card {
-    padding: 16px;
+    padding: 14px;
+  }
+
+  .contact-method-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.875rem;
+  }
+
+  .contact-method-val {
+    font-size: 0.8125rem;
   }
 
   .form-grid {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 8px;
   }
 
   .form-group.full-width {
     grid-column: span 1;
   }
 
+  .form-control {
+    padding: 6px 8px;
+    font-size: 0.8125rem;
+  }
+
   .footer-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 10px;
+    gap: 8px;
   }
 
   .back-to-top {
-    bottom: 16px;
-    right: 16px;
-    width: 36px;
-    height: 36px;
+    bottom: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    font-size: 0.875rem;
   }
 }
 
-/* Extra Small Mobile Screens (320px - 380px) */
-@media screen and (max-width: 380px) {
+/* Extra Small Phones (320px - 360px) */
+@media screen and (max-width: 360px) {
   .hero-name {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
 
   .stats-grid {
@@ -584,7 +654,7 @@
   }
 
   .profile-avatar-card {
-    width: 100px;
-    height: 100px;
+    width: 84px;
+    height: 84px;
   }
 }
