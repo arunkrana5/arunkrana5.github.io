@@ -14,7 +14,7 @@
   --bg-glass: rgba(17, 24, 39, 0.9);
   --bg-subtle: #172033;
   --bg-code: #070a12;
-  --bg-badge: rgba(59, 130, 246, 0.12);
+  --bg-badge: rgba(59, 130, 246, 0.15);
   
   --border-color: #1e293b;
   --border-light: #334155;
@@ -58,17 +58,17 @@
   --bg-glass: rgba(255, 255, 255, 0.95);
   --bg-subtle: #f1f5f9;
   --bg-code: #0f172a;
-  --bg-badge: rgba(59, 130, 246, 0.1);
+  --bg-badge: #eff6ff;
   
-  --border-color: #e2e8f0;
-  --border-light: #cbd5e1;
-  --border-hover: #3b82f6;
+  --border-color: #cbd5e1;
+  --border-light: #94a3b8;
+  --border-hover: #2563eb;
   --border-code: #334155;
   
   --text-primary: #0f172a;
-  --text-secondary: #475569;
+  --text-secondary: #334155;
   --text-muted: #64748b;
-  --text-accent: #2563eb;
+  --text-accent: #1d4ed8;
   
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
@@ -184,37 +184,61 @@ a:hover {
   max-width: 720px;
 }
 
-/* Badges & Chips */
+/* Badges & Chips - High Contrast in Both Themes */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 3px 10px;
+  padding: 4px 10px;
   font-size: 0.75rem;
   font-weight: 600;
   border-radius: var(--radius-full);
   background: var(--bg-badge);
   color: var(--text-accent);
-  border: 1px solid rgba(59, 130, 246, 0.25);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   white-space: nowrap;
 }
 
+[data-theme="light"] .badge {
+  background: #eff6ff;
+  color: #1d4ed8 !important;
+  border-color: #93c5fd;
+}
+
 .badge-emerald {
-  background: rgba(16, 185, 129, 0.12);
-  color: #34d399;
-  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399 !important;
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+[data-theme="light"] .badge-emerald {
+  background: #ecfdf5;
+  color: #047857 !important;
+  border-color: #6ee7b7;
 }
 
 .badge-purple {
-  background: rgba(139, 92, 246, 0.12);
-  color: #c084fc;
-  border-color: rgba(139, 92, 246, 0.3);
+  background: rgba(139, 92, 246, 0.15);
+  color: #c084fc !important;
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
+[data-theme="light"] .badge-purple {
+  background: #f3e8ff;
+  color: #6b21a8 !important;
+  border-color: #c084fc;
 }
 
 .badge-amber {
-  background: rgba(245, 158, 11, 0.12);
-  color: #fbbf24;
-  border-color: rgba(245, 158, 11, 0.3);
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24 !important;
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+[data-theme="light"] .badge-amber {
+  background: #fffbeb;
+  color: #b45309 !important;
+  border-color: #fde68a;
 }
 
 /* Buttons */
@@ -373,23 +397,28 @@ a:hover {
   gap: 10px;
 }
 
+/* Theme Toggle Button - Always Visible Icon */
 .theme-toggle {
   background: var(--bg-subtle);
   border: 1px solid var(--border-color);
-  color: var(--text-secondary);
-  width: 36px;
-  height: 36px;
+  color: var(--text-primary);
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  font-size: 1.15rem;
+  line-height: 1;
   transition: all 0.2s ease;
+  user-select: none;
 }
 
 .theme-toggle:hover {
-  color: var(--text-primary);
+  color: var(--accent-primary);
   border-color: var(--border-hover);
+  background: var(--bg-card-hover);
 }
 
 .mobile-menu-btn {
@@ -403,7 +432,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   4. HERO SECTION (SENIOR LEAD COMPACT HERO)
+   4. HERO SECTION
    -------------------------------------------------------------------------- */
 .hero-section {
   padding-top: calc(var(--nav-height) + 32px);
@@ -717,7 +746,7 @@ a:hover {
 .education-compact-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .edu-item {
@@ -737,10 +766,11 @@ a:hover {
   font-size: 0.78125rem;
   color: var(--text-muted);
   margin-top: 2px;
+  line-height: 1.4;
 }
 
 /* --------------------------------------------------------------------------
-   8. WORK EXPERIENCE (SENIOR TIMELINE)
+   8. WORK EXPERIENCE
    -------------------------------------------------------------------------- */
 .experience-timeline {
   display: flex;
@@ -823,7 +853,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   9. FEATURED PROJECTS GRID (SENIOR CARDS & METRIC BANNERS)
+   9. FEATURED PROJECTS GRID (HIGH CONTRAST CATEGORY BADGES)
    -------------------------------------------------------------------------- */
 .projects-grid {
   display: grid;
@@ -866,18 +896,27 @@ a:hover {
   transform: scale(1.05);
 }
 
+/* High Contrast Category Badge in Cards */
 .project-category-badge {
   position: absolute;
   top: 10px;
   left: 10px;
-  font-size: 0.71875rem;
-  font-weight: 600;
-  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
   border-radius: var(--radius-sm);
-  background: rgba(11, 15, 25, 0.88);
-  color: var(--text-primary);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #0f172a;
+  color: #60a5fa !important;
+  border: 1px solid #3b82f6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+[data-theme="light"] .project-category-badge {
+  background: #ffffff;
+  color: #1d4ed8 !important;
+  border: 1px solid #3b82f6;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .project-metric-banner {
@@ -885,14 +924,19 @@ a:hover {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(15, 23, 42, 0.92);
-  color: #34d399;
+  background: #020617;
+  color: #34d399 !important;
   font-family: var(--font-mono);
-  font-size: 0.71875rem;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-top: 1px solid rgba(52, 211, 153, 0.3);
+  z-index: 10;
+}
+
+[data-theme="light"] .project-metric-banner {
+  background: #0f172a;
+  color: #34d399 !important;
 }
 
 .project-body {
@@ -1020,6 +1064,11 @@ a:hover {
   font-family: var(--font-mono);
 }
 
+[data-theme="light"] .modal-metrics-bar {
+  background: #ecfdf5;
+  color: #047857;
+}
+
 .modal-body {
   padding: 20px;
   overflow-y: auto;
@@ -1060,7 +1109,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   10. SKILLS MATRIX (SENIOR CATEGORIZED CHIPS)
+   10. SKILLS MATRIX
    -------------------------------------------------------------------------- */
 .skills-grid {
   display: grid;
